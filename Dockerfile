@@ -3,6 +3,7 @@ RUN apt update && apt install -y sudo g++ make ccache libjsoncpp-dev libjson-c-d
 RUN ln -s /usr/include/jsoncpp/json/ /usr/include/json
 RUN git clone https://github.com/jpbarrette/curlpp.git 
 RUN cd curlpp; mkdir build && cd build; cmake ../;make && sudo make install;cd /
+RUN sudo echo "/usr/local/lib" >> /etc/ld.so.conf; sudo ldconfig
 RUN pg_ctlcluster 11 main start 
 RUN mkdir /app; mkdir /app/helpcovid;cd /app/helpcovid
 RUN touch 1.py; touch 1.sh;dos2unix *.py *.sh; [ -f /app/helpcovid/Makefile ] && make; [ -f /app/helpcovid/generate-config.py ] && printf '\n\n\n\n\n\n\n' | ./generate-config.py; [ -f /app/helpcovid/Makefile ] && make localtest0; rm 1.py; rm 1.sh
