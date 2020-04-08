@@ -1,4 +1,4 @@
-# docker-debian-webplus
+# docker-debian-webplus [![Build Status](https://travis-ci.com/montao/docker-debian-webplus.svg?branch=master)](https://travis-ci.com/montao/docker-debian-webplus)  
 
 Example Win10 usage with VSCode  
 `cd C:\Users\pierre\proj\github.com`  
